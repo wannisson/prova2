@@ -1,0 +1,45 @@
+<html ng-app="tictac">
+  <head>
+    <title>Jogo da Velha</title>
+    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="style.css"></link>
+	
+	
+	
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+ </head>
+  <body>
+ <div class="container" ng-controller="game">
+<h2>Clica no dado para jogar:</h2>
+<h2>Digite a quantidade de Dados: <input type="text" ng-model="valor"></h2> 
+	
+  <div class="main" id="main" >
+	  <div class="col-xs-4 casa glyphicon " ng-class="peca"  ng-show="dado.escolhido"
+	   ng-repeat="dado in tabuleiro track by $index" >
+	 	<a class="thumbnail">
+	 	<img ng-src="{{dado.escolhido  ? dado.nome : dado.fundo}}"/>
+		
+	  	</a>
+	  </div>
+	  <a class="thumbnail">
+	 <img ng-src="imagens/fundo.jpg" class="fundo" ng-show="mostrar" ng-click="iniciarJogo(valor)"/>
+	 </a>
+  </div>
+  
+</div>
+
+
+  </body>
+  <script src="js/angular.min.js"></script>
+  <script src="js/tictac.js"></script>
+  <script> </script>
+</html>
