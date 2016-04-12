@@ -19,21 +19,35 @@
  </head>
   <body>
  <div class="container" ng-controller="game">
-<h2>Clica no dado para jogar:</h2>
-<h2>Digite a quantidade de Dados: <input type="text" ng-model="valor"></h2> 
-	
+<h2>Jogo dos Dados</h2>
+<button class="btn btn-success col-xs-4" ng-click="jogarDado()">Jogar Dados</button>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Quantidade de dados" ng-model="valor">
+      <span class="input-group-btn" >
+        <button class="btn btn-secondary" type="button" ng-click="iniciarJogo()">Enviar</button>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="alert alert-danger " role="alert" ng-show="mensagem">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Você tem que escolher</strong> no minimo 1 dado para jogar.
+</div>	
   <div class="main" id="main" >
-	  <div class="col-xs-4 casa glyphicon " ng-class="peca"  ng-show="dado.escolhido"
+	  <div class="col-xs-5 casa glyphicon " ng-class="peca"  ng-show="dado.escolhido"
 	   ng-repeat="dado in tabuleiro track by $index" >
 	 	<a class="thumbnail">
 	 	<img ng-src="{{dado.escolhido  ? dado.nome : dado.fundo}}"/>
 		
 	  	</a>
 	  </div>
-	  <a class="thumbnail">
-	 <img ng-src="imagens/fundo.jpg" class="fundo" ng-show="mostrar" ng-click="iniciarJogo(valor)"/>
-	 </a>
-  </div>
+	    </div>
   
 </div>
 
